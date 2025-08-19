@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Play } from "lucide-react";
@@ -7,38 +7,15 @@ import VolumeControls from "./VolumeControls"; // Assuming you have a separate c
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.3);
+
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Volume & autoplay logic
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume;
-    }
-  }, [volume]);
 
-  const togglePlay = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
 
-    if (isPlaying) {
-      audio.pause();
-      setIsPlaying(false);
-    } else {
-      audio.play().then(() => setIsPlaying(true)).catch(err => {
-        console.warn("Playback failed", err);
-      });
-    }
-  };
 
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newVolume = parseFloat(e.target.value);
-    setVolume(newVolume);
-    if (audioRef.current) {
-      audioRef.current.volume = newVolume;
-    }
-  };
+
+
 
   const navLinkClass =
     "relative text-gray-700 text-sm transition-colors duration-300 hover:text-green-600 group";
