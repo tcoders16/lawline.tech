@@ -119,8 +119,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex flex-col space-y-2 px-4 pb-4">
-            <button className="w-full py-2 text-sm border border-gray-300 rounded hover:bg-gray-100 transition">Log in</button>
-            <button className="w-full py-2 text-sm bg-black text-white rounded hover:opacity-90 transition">Sign up</button>
+
           </div>
         </div>
       )}
