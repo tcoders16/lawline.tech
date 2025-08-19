@@ -43,14 +43,16 @@ const StoryHeroCard = () => {
         >
           <div className="w-full max-w-[600px]">
             <TinderCard
-              onSwipe={handleSwipe}
-              onCardLeftScreen={() => {
-                if (liked === null) {
-                  setSwipeMessage("Skipped! Swipe slower next time 👀");
-                  setTimeout(() => setSwipeMessage(null), 5000);
+            onSwipe={(dir) => {
+                if (dir === "right") {
+                handleSwipe("right");
+                } else if (dir === "left") {
+                handleSwipe("left");
                 }
-              }}
-              preventSwipe={["up", "down"]}
+            }}
+            preventSwipe={["up", "down"]}
+            swipeRequirementType="position" // ← make it sensitive to small movements
+            swipeThreshold={10} // ← super sensitive swipe threshold
             >
               <div
                 className={`relative bg-white rounded-[28px] border-2 overflow-hidden shadow-xl transition-all duration-300 cursor-grab
