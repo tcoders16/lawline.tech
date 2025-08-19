@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { BsPlayFill, BsPauseFill } from "react-icons/bs";
+
 import VolumeControls from "./VolumeControls"; // Assuming you have a separate component for volume controls
 
 export default function Navbar() {
