@@ -2,12 +2,12 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const LogoIntro = () => {
+const LogoIntro = ({ onFinish }: { onFinish?: () => void }) => {
   const [visibleText, setVisibleText] = useState('');
   const [hideLogo, setHideLogo] = useState(false);
   const [showCaret, setShowCaret] = useState(true);
 
-  const fullText = 'L\u00A0aw\u00A0Line'; // non-breaking space between Law and Line
+  const fullText = 'L\u00A0awline'; // non-breaking space between Law and Line
 
   useEffect(() => {
     let index = 0;
@@ -27,6 +27,7 @@ const LogoIntro = () => {
 
     const autoHideTimer = setTimeout(() => {
       setHideLogo(true);
+      if (onFinish) onFinish();
     }, 4000);
 
     return () => {
@@ -34,23 +35,28 @@ const LogoIntro = () => {
       clearInterval(caretInterval);
       clearTimeout(autoHideTimer);
     };
-  }, []);
+  }, [onFinish]);
 
   return (
     <motion.div
-      className={`fixed top-0 left-0 w-full h-full bg-white dark:bg-black z-50 flex items-center justify-center ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black ${
         hideLogo ? 'pointer-events-none' : ''
       }`}
       initial={{ opacity: 1 }}
       animate={{ opacity: hideLogo ? 0 : 1, y: hideLogo ? -100 : 0 }}
       transition={{ duration: 1.5, ease: 'easeInOut' }}
     >
-      <div className="text-7xl sm:text-8xl md:text-9xl font-bold tracking-widest text-black dark:text-white chakra-petch-extrabold">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="text-center font-bold antialiased tracking-wider leading-[1.1] text-black dark:text-white chakra-petch-bold text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[12rem]"
+      >
         {visibleText}
         <span className="inline-block w-[1ch]">
           {showCaret && <span className="animate-pulse">|</span>}
         </span>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
