@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { Play } from "lucide-react";
 
 import VolumeControls from "./VolumeControls"; // Assuming you have a separate component for volume controls
 
@@ -75,10 +76,14 @@ export default function Navbar() {
             <span className={underlineSpan} />
           </Link>
 
-          <Link to="/blessings" className={navLinkClass}>
+
+        <Link to="/blessings" className={navLinkClass}>
+          <div className="flex items-center gap-1">
+            <Play size={15} className="text-green-600" />
             Harikrushna Maharaj
-            <span className={underlineSpan} />
-          </Link>
+          </div>
+          <span className={underlineSpan} />
+        </Link>
 
           <Link to="/ai-client-updates" className={navLinkClass}>
             Lawline v1 – AI Client Update Edition
