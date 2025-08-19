@@ -1,6 +1,7 @@
 // src/components/FeaturesOverview.tsx
 
-import LLM from '../icons/LLM';
+
+import LLM from '../icons/llm';
 import Time from '../icons/Time';
 import VectorEmbedding from '../icons/VectorEmbedding';
 import VectorSearch from '../icons/VectorSearch';
