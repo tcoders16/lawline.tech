@@ -1,14 +1,55 @@
-// src/components/Navbar.tsx
-import  { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { BsPlayFill, BsPauseFill } from "react-icons/bs";
+import VolumeControls from "./VolumeControls"; // Assuming you have a separate component for volume controls
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.3);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Volume & autoplay logic
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume]);
+
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      audio.play().then(() => setIsPlaying(true)).catch(err => {
+        console.warn("Playback failed", err);
+      });
+    }
+  };
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = parseFloat(e.target.value);
+    setVolume(newVolume);
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
+    }
+  };
+
+  const navLinkClass =
+    "relative text-gray-700 text-sm transition-colors duration-300 hover:text-green-600 group";
+
+  const underlineSpan = `
+    absolute left-0 -bottom-1 w-0 h-[2px] bg-green-600 transition-all duration-300 group-hover:w-full
+  `;
 
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50 chakra-petch-regular">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+
         {/* Logo */}
         <Link to="/" className="relative inline-flex text-gray-800 text-2xl font-semibold">
           <span className="relative inline-block">
@@ -27,18 +68,28 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden md:flex space-x-6 text-gray-700 text-sm">
-          <Link to="/how-it-works" className="hover:text-gray-900">How it works</Link>
-          <Link to="/features" className="hover:text-gray-900">Features</Link>
-          <Link to="/get-started" className="hover:text-gray-900">Get started</Link>
-          <Link to="/install" className="hover:text-gray-900">Install</Link>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-6">
+          <Link to="/blessings" className={navLinkClass}>
+            Harikrushna Maharaj
+            <span className={underlineSpan} />
+          </Link>
+          <Link to="/ai-client-updates" className={navLinkClass}>
+            Lawline v1 – AI Client Update Edition
+            <span className={underlineSpan} />
+          </Link>
         </nav>
 
-        {/* Actions (Desktop) */}
-        <div className="hidden md:flex space-x-3">
-          <button className="px-4 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100 transition">Log in</button>
-          <button className="px-4 py-1 text-sm bg-black text-white rounded hover:opacity-90 transition">Sign up</button>
+        {/* Audio Controls */}
+        <div className="hidden md:flex items-center space-x-4">
+          {/* Play Button */}
+
+
+          {/* Volume Slider */}
+          <VolumeControls />  
+
+          {/* Auth Buttons */}
+
         </div>
 
         {/* Mobile Hamburger */}
@@ -51,17 +102,49 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <nav className="flex flex-col space-y-2 px-4 pb-4">
-            <Link to="/how-it-works" className="block py-2 border-b border-gray-200">How it works</Link>
-            <Link to="/features" className="block py-2 border-b border-gray-200">Features</Link>
-            <Link to="/get-started" className="block py-2 border-b border-gray-200">Get started</Link>
-            <Link to="/install" className="block py-2 border-b border-gray-200">Install</Link>
+            <Link to="/blessings" className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">Harikrushna Maharaj</Link>
+            <Link to="/ai-client-updates" className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">Lawline v1 – AI Client Update Edition</Link>
           </nav>
-          <div className="flex flex-col space-y-2 px-4 pb-4 pt-2">
+
+          {/* Mobile Audio Controls */}
+          <div className="flex items-center space-x-4 px-4 pb-4 pt-2">
+            <button
+              onClick={togglePlay}
+              className="bg-green-600 text-white p-2 rounded-full shadow hover:scale-105 transition"
+              aria-label="Play/Pause"
+            >
+              {isPlaying ? <BsPauseFill size={20} /> : <BsPlayFill size={20} />}
+            </button>
+
+            <div className="relative group w-full">
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange}
+                className="w-full h-1 accent-green-600 bg-gradient-to-r from-green-400 via-green-600 to-green-700 rounded-full cursor-pointer"
+              />
+              <div className="absolute -top-6 right-0 text-xs opacity-0 group-hover:opacity-100 transition duration-300 text-gray-600">
+                {Math.round(volume * 100)}%
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col space-y-2 px-4 pb-4">
             <button className="w-full py-2 text-sm border border-gray-300 rounded hover:bg-gray-100 transition">Log in</button>
             <button className="w-full py-2 text-sm bg-black text-white rounded hover:opacity-90 transition">Sign up</button>
           </div>
         </div>
       )}
+
+      {/* Hidden Audio Tag */}
+      <audio
+        ref={audioRef}
+        src="/audio/SwaminarayanDhun.mp3"
+        loop
+      />
     </header>
   );
 }

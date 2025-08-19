@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import HeroTitle from './HoverHighlightTitle';
+
+import EmailSubscribe from './emailSubscribe';
 
 
 
@@ -118,7 +119,8 @@ const LandingPage: React.FC = () => {
         {/* Boiler plate */}
         <section className="min-h-screen  flex items-center justify-center px-4">
       <div className="space-y-6 text-center">
-        <HeroTitle />
+        <EmailSubscribe/>
+
         <p className="text-white text-xl sm:text-2xl">Skip the stack. Start building.</p>
       </div>
     </section>
