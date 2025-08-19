@@ -12,9 +12,9 @@ const Blessings = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-white flex flex-col items-center px-4 pt-20 pb-28 md:pt-24 lg:pt-28">
-        {/* Image */}
-        <div className="w-full flex justify-center mb-8 md:mb-12">
+      <div className="min-h-screen bg-white flex flex-col md:flex-row items-center justify-center px-4 pt-20 pb-28 md:pt-24 lg:pt-28 gap-10">
+        {/* Left: Image */}
+        <div className="w-full md:w-1/2 flex justify-center">
           <img
             src="/HariKrushnaMaharaj.webp"
             alt="Harikrushna Maharaj Vadtal Dham"
@@ -22,9 +22,12 @@ const Blessings = () => {
           />
         </div>
 
-        {/* Text Block */}
-        <div className="w-full max-w-3xl text-left flex flex-col items-start space-y-4">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-green-700 chakra-petch-bold mb-2">
+        {/* Vertical Divider Line */}
+        <div className="hidden md:block w-[6px] h-[26rem] bg-green-600 rounded-full shadow-md" />
+
+        {/* Right: Text */}
+        <div className="w-full md:w-1/2 flex flex-col items-start text-left space-y-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-green-700 chakra-petch-bold">
             Bhagwan Swaminarayan 🙏
           </h1>
 
