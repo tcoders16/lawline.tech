@@ -1,37 +1,34 @@
 import { useEffect } from "react";
 import Layout from "../components/Layout";
 import { useAudio } from "../context/AudioContext";
-import VolumeControls from "../components/VolumeControls"; // ✅ Import centralized volume controls
+import VolumeControls from "../components/VolumeControls";
 
 const Blessings = () => {
-  const { playIfNotPlaying } = useAudio(); // only need this here
+  const { playIfNotPlaying } = useAudio();
 
   useEffect(() => {
-    playIfNotPlaying(); // Plays global audio
+    playIfNotPlaying(); // only triggers on /blessings page
   }, []);
 
   return (
     <Layout>
-      <div className="min-h-screen bg-white flex flex-col md:flex-row items-center justify-center px-6 py-16 gap-10">
-        {/* Left: Image */}
-        <div className="w-full md:w-1/2 flex justify-center">
+      <div className="min-h-screen bg-white flex flex-col items-center px-4 pt-20 pb-28 md:pt-24 lg:pt-28">
+        {/* Image */}
+        <div className="w-full flex justify-center mb-8 md:mb-12">
           <img
             src="/HariKrushnaMaharaj.webp"
             alt="Harikrushna Maharaj Vadtal Dham"
-            className="w-80 md:w-96 rounded-xl border-4 border-green-600 shadow-xl"
+            className="w-64 sm:w-72 md:w-80 lg:w-96 rounded-xl border-4 border-green-600 shadow-xl"
           />
         </div>
 
-        {/* Vertical Line */}
-        <div className="hidden md:block w-[8px] h-[28rem] bg-green-600 rounded-full shadow-md" />
-
-        {/* Right: Text */}
-        <div className="w-full md:w-1/2 flex flex-col items-start text-left">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-green-700 chakra-petch-bold chakra-petch-regular mb-4">
+        {/* Text Block */}
+        <div className="w-full max-w-3xl text-left flex flex-col items-start space-y-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-green-700 chakra-petch-bold mb-2">
             Bhagwan Swaminarayan 🙏
           </h1>
 
-          <p className="text-lg text-gray-800 chakra-petch-regular max-w-xl leading-relaxed mb-6">
+          <p className="text-base sm:text-lg md:text-xl text-gray-800 chakra-petch-regular leading-relaxed">
             May the divine energy guide the vision of{" "}
             <strong className="text-green-700">Lawline</strong>. Every line of
             code is written under the spiritual light of{" "}
@@ -53,8 +50,8 @@ const Blessings = () => {
             <span className="text-green-700">clarity</span>.
           </p>
 
-          {/* ✅ Use Global Volume Controls */}
-          <div className="mt-2">
+          {/* Volume Controls */}
+          <div className="mt-4 w-full">
             <VolumeControls />
           </div>
         </div>

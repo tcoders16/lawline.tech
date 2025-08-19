@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Play } from "lucide-react";
 import VolumeControls from "./VolumeControls";
@@ -7,8 +7,10 @@ import VolumeControls from "./VolumeControls";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const location = useLocation();
 
-  // ✅ Ensures audio plays only if not already playing
+  const isBlessingPage = location.pathname === "/blessings";
+
   const playIfNotPlaying = () => {
     const audio = audioRef.current;
     if (audio && audio.paused) {
@@ -19,7 +21,7 @@ export default function Navbar() {
 
   const handleMobileToggle = () => {
     setIsOpen((prev) => !prev);
-    playIfNotPlaying(); // Trigger audio when user opens menu
+    // ❌ Removed playIfNotPlaying from here
   };
 
   const navLinkClass =
@@ -39,7 +41,7 @@ export default function Navbar() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1418 125"
-              className="absolute -bottom-[1.9px] left-0 w-full h-[6px]"
+              className="absolute bottom-[1.9px] left-0 w-full h-[3px]"
               preserveAspectRatio="none"
             >
               <path
@@ -57,7 +59,13 @@ export default function Navbar() {
             <span className={underlineSpan} />
           </Link>
 
-          <Link to="/blessings" onClick={playIfNotPlaying} className={navLinkClass}>
+          <Link
+            to="/blessings"
+            onClick={() => {
+              if (!isBlessingPage) playIfNotPlaying();
+            }}
+            className={navLinkClass}
+          >
             <div className="flex items-center gap-1">
               <Play size={15} className="text-green-600" />
               Harikrushna Maharaj
@@ -86,14 +94,29 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <nav className="flex flex-col space-y-2 px-4 pb-4">
-            <Link to="/blessings" onClick={playIfNotPlaying} className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">
-            <div className="flex items-center gap-1">
-              <Play size={15} className="text-green-600" />
-              Harikrushna Maharaj
-            </div>
+            <Link to="/" className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">
+              Home
+              <span className={underlineSpan} />
             </Link>
-            <Link to="/ai-client-updates" className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">
+            <Link
+              to="/blessings"
+              onClick={() => {
+                if (!isBlessingPage) playIfNotPlaying();
+              }}
+              className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300"
+            >
+              <div className="flex items-center gap-1">
+                <Play size={15} className="text-green-600" />
+                Harikrushna Maharaj
+                <span className={underlineSpan} />
+              </div>
+            </Link>
+            <Link
+              to="/ai-client-updates"
+              className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300"
+            >
               Lawline v1 – AI Client Update Edition
+              <span className={underlineSpan} />
             </Link>
           </nav>
 
