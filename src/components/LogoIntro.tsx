@@ -50,7 +50,7 @@ const LogoIntro = ({ onFinish }: { onFinish?: () => void }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="text-center font-bold antialiased tracking-wider leading-[1.1] text-black dark:text-white chakra-petch-bold text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[12rem]"
+        className="ml-22 text-center font-bold antialiased tracking-wider leading-[1.1] text-black dark:text-white chakra-petch-bold text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[12rem]"
       >
         {visibleText}
         <span className="inline-block w-[1ch]">
