@@ -40,7 +40,7 @@ const CoffeeWithBusiness = () => {
       <div className="min-h-screen bg-white text-gray-900 chakra-petch-regular py-16 px-6">
         <div className="max-w-5xl mx-auto text-center space-y-6">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Where ☕️ Sparks Ideas, and Ideas Build Empires.
+            Where - ☕️ - ⚡️ Ideas, and Ideas Build 👑.
             </h1>
           <p className="text-lg text-gray-700">
             Canadians love coffee — and so do we. <br />
