@@ -14,26 +14,34 @@ const RealEmailPreview = () => {
     type: null,
   });
 
-  const [emailContent, setEmailContent] = useState(
-    `Mr. Sisodiya,
+      const [emailContent, setEmailContent] = useState(
+        `Mr. Sisodiya,
 
-I hope you're doing well. Here’s your legal case update for the week of ${today}:
+      I hope you're having a smooth week. Here's your legal case update for the week of ${today}:
 
-• Earlier this week, we carefully reviewed the documents received from the opposing party, including the new affidavit and evidence package.
-• During our review, we noticed a few discrepancies in the timeline provided by the other side. These details have been flagged and could help us during negotiations or in court.
-• We've updated your internal case file with a summary of the main points, including notes from our legal team and key highlights.
-• The court has tentatively scheduled your next hearing for September 4, 2025. We're currently waiting for official confirmation.
-• A draft of our next communication to the court has been prepared. We’d love for you to take a look and share any feedback you may have before we submit it.
+      • We’ve reviewed the latest documents from the opposing party, including a new affidavit and evidence file.
 
-If you'd like to discuss anything in more detail, or schedule a short call this week, just let us know—we’re here to help.
+      • We found some inconsistencies in their reported timeline. These may work in our favor during negotiations or in court.
 
-Thanks again for your trust in our team.
+      • Our team added a fresh summary to your case file, highlighting the key points and internal notes.
 
-Warm regards,  
-Shalini Desai  
-Litigation Associate  
-Veritas Law LLP`
-  );
+      • Your next court hearing is tentatively scheduled for September 4, 2025. We're just waiting on formal confirmation.
+
+      • We’ve also drafted the next court update. Please review and share feedback before we send it in.
+
+      Let us know if you'd like to go over anything or schedule a quick call — we're always here to support you.
+
+      Thank you again for your continued trust.
+
+      Warm regards,  
+      Shalini Desai  
+      Litigation Associate  
+      Veritas Law LLP`
+      );
+
+
+
+
 
   useEffect(() => {
     if (toast.type) {
@@ -61,47 +69,47 @@ Veritas Law LLP`
           </div>
 
           {/* Email Body */}
-<div className="p-6 whitespace-pre-wrap text-[15px] leading-relaxed tracking-wide text-gray-900 bg-white space-y-4">
+          <div className="p-6 whitespace-pre-wrap text-[15px] leading-relaxed tracking-wide text-gray-900 bg-white space-y-4">
 
-  <p><strong className="text-gray-800">Mr. Sisodiya,</strong></p>
+            <p><strong className="text-gray-800">Mr. Sisodiya,</strong></p>
 
-  <p>
-    I hope you're having a smooth week. Here's your legal case update for the week of 
-    <span className="font-bold text-green-600"> {today}</span>:
-  </p>
+            <p>
+              I hope you're having a smooth week. Here's your legal case update for the week of 
+              <span className="font-bold text-green-600"> {today}</span>:
+            </p>
 
-  <ul className="list-disc pl-6 space-y-2">
-    <li>We’ve reviewed the latest documents from the opposing party, including a new affidavit and evidence file.</li>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>We’ve reviewed the latest documents from the opposing party, including a new affidavit and evidence file.</li>
 
-    <li>
-      <strong className="text-red-700 underline">
-        We found some inconsistencies in their reported timeline
-      </strong>, which may work in our favor during negotiations or in court.
-    </li>
+              <li>
+                <strong className="text-red-700 underline">
+                  We found some inconsistencies in their reported timeline
+                </strong>, which may work in our favor during negotiations or in court.
+              </li>
 
-    <li>Our team added a fresh summary to your case file, highlighting the key points and internal notes.</li>
+              <li>Our team added a fresh summary to your case file, highlighting the key points and internal notes.</li>
 
-    <li>
-      Your next court hearing is tentatively scheduled for 
-      <span className="text-green-600 font-semibold underline"> September 4, 2025</span>. We're just waiting on formal confirmation.
-    </li>
+              <li>
+                Your next court hearing is tentatively scheduled for 
+                <span className="text-green-600 font-semibold underline"> September 4, 2025</span>. We're just waiting on formal confirmation.
+              </li>
 
-    <li>We’ve also drafted the next court update. Please review and share feedback before we send it in.</li>
-  </ul>
+              <li>We’ve also drafted the next court update. Please review and share feedback before we send it in.</li>
+            </ul>
 
-  <p>
-    Let us know if you'd like to go over anything or schedule a quick call — we're always here to support you.
-  </p>
+            <p>
+              Let us know if you'd like to go over anything or schedule a quick call — we're always here to support you.
+            </p>
 
-  <div className="pt-4">
-    <p>Thank you again for your continued trust.</p>
-    <br />
-    <p><strong className="text-gray-800">Warm regards,</strong></p>
-    <p><strong className="text-gray-800">Shalini Desai</strong></p>
-    <p><strong className="text-gray-800">Litigation Associate</strong></p>
-    <p><strong className="text-gray-800">Veritas Law LLP</strong></p>
-  </div>
-</div>
+            <div className="pt-4">
+              <p>Thank you again for your continued trust.</p>
+              <br />
+              <p><strong className="text-gray-800">Warm regards,</strong></p>
+              <p><strong className="text-gray-800">Shalini Desai</strong></p>
+              <p><strong className="text-gray-800">Litigation Associate</strong></p>
+              <p><strong className="text-gray-800">Veritas Law LLP</strong></p>
+            </div>
+          </div>
 
           {/* Footer Buttons */}
           <div className="bg-gray-50 px-4 sm:px-6 py-4 border-t border-gray-200 flex justify-end space-x-3">
