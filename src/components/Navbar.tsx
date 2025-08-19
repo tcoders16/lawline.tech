@@ -87,7 +87,10 @@ export default function Navbar() {
         <div className="md:hidden bg-white shadow-lg">
           <nav className="flex flex-col space-y-2 px-4 pb-4">
             <Link to="/blessings" onClick={playIfNotPlaying} className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">
+            <div className="flex items-center gap-1">
+              <Play size={15} className="text-green-600" />
               Harikrushna Maharaj
+            </div>
             </Link>
             <Link to="/ai-client-updates" className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">
               Lawline v1 – AI Client Update Edition
