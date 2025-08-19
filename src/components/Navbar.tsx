@@ -77,6 +77,10 @@ export default function Navbar() {
             Lawline v1 – AI Client Update Edition
             <span className={underlineSpan} />
           </Link>
+            <Link to="/Coffee-and-Business" className={navLinkClass}>
+            ☕️ Business
+            <span className={underlineSpan} />
+          </Link>
         </nav>
 
         {/* Desktop Audio Controls */}
@@ -118,6 +122,10 @@ export default function Navbar() {
               Lawline v1 – AI Client Update Edition
               <span className={underlineSpan} />
             </Link>
+            <Link to="/Coffee-and-Business" className={navLinkClass}>
+            ☕️ Business
+            <span className={underlineSpan} />
+          </Link>
           </nav>
 
           {/* Mobile Volume Controls */}

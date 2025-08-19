@@ -5,6 +5,7 @@ import Blessings from './pages/HarikrushnaMaharaj';
 import AiClientUpdates from './pages/AiClientUpdates';
 import { useState } from 'react';
 import LogoIntro from './components/LogoIntro'; // Import the intro component
+import CoffeeWithBusiness from './pages/CoffeeWithBusiness';
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false);
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/generate" element={<GenerateTimelinePage />} />
             <Route path="/about" element={<AboutPage />} /> */}
+            <Route path="/Coffee-and-Business" element = {<CoffeeWithBusiness />} />
           </Routes>
         </BrowserRouter>
       )}

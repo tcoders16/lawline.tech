@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import BuyInstallCard from './BuyInstallCard';
 import EmailSubscribe from './emailSubscribe';
 
 const LandingPage: React.FC = () => {
@@ -107,8 +107,11 @@ const LandingPage: React.FC = () => {
             <span className="text-green-800 font-extrabold text-xs sm:text-sm">
               Pearson Spector
             </span>
+           
           </span>
+          
         </div>
+         <BuyInstallCard />
 
         {/* Email Section */}
           <section
