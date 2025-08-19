@@ -117,9 +117,7 @@ const LandingPage: React.FC = () => {
           >
             <div className="space-y-6 text-center">
               <EmailSubscribe />
-              <p className="text-gray-900 text-base sm:text-lg md:text-xl">
-                Skip the stack. Start building.
-              </p>
+
             </div>
           </section>
 
