@@ -70,10 +70,16 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6">
+          <Link to="/" className={navLinkClass}>
+            Home
+            <span className={underlineSpan} />
+          </Link>
+
           <Link to="/blessings" className={navLinkClass}>
             Harikrushna Maharaj
             <span className={underlineSpan} />
           </Link>
+
           <Link to="/ai-client-updates" className={navLinkClass}>
             Lawline v1 – AI Client Update Edition
             <span className={underlineSpan} />
