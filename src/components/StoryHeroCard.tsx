@@ -86,31 +86,33 @@ const StoryHeroCard = () => {
                 <div className="flex flex-col justify-between h-full text-left">
                     {/* Card Content  */}
                     <div className="overflow-y-auto pr-1 text-[17px] text-gray-800 leading-relaxed font-medium space-y-6">
+
                     <p>
-                        I grew up where <span className="text-[#008f6f] font-semibold underline underline-offset-2">temples echoed louder than tech talks</span> — 
-                        but somehow, I ended up building both.
+                        I grew up in a town where <span className="text-[#008f6f] font-semibold underline underline-offset-2">temples echoed louder than tech talks</span>.
+                        Where tradition shaped life, and code was an unheard language. 
+                        But curiosity? That was universal.
                     </p>
 
                     <p>
-                        I don’t just write code. <span className="text-[#008f6f] font-semibold">I solve real-world chaos with it</span> — from
-                        <span className="font-medium text-gray-900"> donation halls needing transparency</span>,
-                        to <span className="font-medium text-gray-900">legal teams drowning in documents</span>,
-                        to <span className="font-medium text-gray-900">people losing track of what matters</span>.
+                        Years later, I wasn’t just building apps — I was building answers. 
+                        A donation system that could never be rigged. A legal assistant that could read thousands of pages and write like a paralegal. 
+                        A map that brought back memories — because someone had lost more than just their wallet.
                     </p>
 
                     <p>
                         Whether it’s <span className="text-[#008f6f] font-semibold underline underline-offset-2">OCR</span>, 
-                        <span className="text-[#008f6f] font-semibold underline underline-offset-2">local LLMs</span>, 
-                        or <span className="text-[#008f6f] font-semibold underline underline-offset-2">agent workflows</span> — I use whatever tech fits the mission.
-                        And if the tool doesn’t exist, <span className="font-bold text-gray-900">I’ll build it from scratch</span>.
+                        <span className="text-[#008f6f] font-semibold underline underline-offset-2">local LLMs</span>, or 
+                        <span className="text-[#008f6f] font-semibold underline underline-offset-2">agent workflows</span> — I don’t chase buzzwords. 
+                        I chase outcomes.
+                        And when the tool doesn’t exist? <span className="font-bold text-gray-900">I build it from scratch</span>.
                     </p>
 
                     <p>
-                        I’m not here to impress. <span className="text-[#008f6f] font-bold underline underline-offset-2">I’m here to deliver</span> — 
-                        systems that <span className="font-semibold text-gray-900">speak the local language</span>, 
-                        <span className="font-semibold text-gray-900">respect the user</span>, and 
-                        <span className="font-semibold text-gray-900">never waste time</span>.
+                        <span className="text-[#008f6f] font-bold underline underline-offset-2">I’m not here to impress.</span> 
+                        I’m here to solve — with systems that speak the local language, 
+                        respect the user, and <span className="font-semibold text-gray-900">never waste time</span>.
                     </p>
+
                     </div>
                 <div className="pt-6 text-left">
                     <h2 className="text-2xl font-bold text-gray-900 chakra-petch-bold mb-1">Omkumar Solanki</h2>
