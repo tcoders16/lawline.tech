@@ -14,7 +14,7 @@ const RealEmailPreview = () => {
     type: null,
   });
 
-      const [emailContent, setEmailContent] = useState(
+      const [emailContent] = useState(
         `Mr. Sisodiya,
 
       I hope you're having a smooth week. Here's your legal case update for the week of ${today}:
