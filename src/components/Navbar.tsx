@@ -113,29 +113,9 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile Audio Controls */}
-          <div className="flex items-center space-x-4 px-4 pb-4 pt-2">
-            <button
-              onClick={togglePlay}
-              className="bg-green-600 text-white p-2 rounded-full shadow hover:scale-105 transition"
-              aria-label="Play/Pause"
-            >
-              {isPlaying ? <BsPauseFill size={20} /> : <BsPlayFill size={20} />}
-            </button>
-
-            <div className="relative group w-full">
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                value={volume}
-                onChange={handleVolumeChange}
-                className="w-full h-1 accent-green-600 bg-gradient-to-r from-green-400 via-green-600 to-green-700 rounded-full cursor-pointer"
-              />
-              <div className="absolute -top-6 right-0 text-xs opacity-0 group-hover:opacity-100 transition duration-300 text-gray-600">
-                {Math.round(volume * 100)}%
-              </div>
-            </div>
+          {/* Mobile Audio Controls - Unified */}
+          <div className="px-4 pb-4 pt-2">
+            <VolumeControls />
           </div>
 
           <div className="flex flex-col space-y-2 px-4 pb-4">
