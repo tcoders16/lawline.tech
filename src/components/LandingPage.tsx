@@ -17,12 +17,12 @@ const LandingPage: React.FC = () => {
       <div className="w-full max-w-screen-lg 2xl:max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center space-y-10 sm:space-y-12 min-h-[85vh] pt-[10vh]">
 
         {/* Title */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight relative inline-block">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-extrabold tracking-tight leading-tight relative inline-block">
           Lawline
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1418 125"
-            className="absolute -bottom-[1.9px] left-0 w-full h-[7px]"
+            className="absolute -bottom-[5.9px] left-0 w-full h-[22px]"
             preserveAspectRatio="none"
           >
             <path
