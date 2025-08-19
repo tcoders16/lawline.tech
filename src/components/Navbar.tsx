@@ -2,20 +2,25 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Play } from "lucide-react";
-
-import VolumeControls from "./VolumeControls"; // Assuming you have a separate component for volume controls
+import VolumeControls from "./VolumeControls";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // Volume & autoplay logic
+  // ✅ Ensures audio plays only if not already playing
+  const playIfNotPlaying = () => {
+    const audio = audioRef.current;
+    if (audio && audio.paused) {
+      audio.volume = 0.5;
+      audio.play().catch((err) => console.warn("Playback failed:", err));
+    }
+  };
 
-
-
-
-
+  const handleMobileToggle = () => {
+    setIsOpen((prev) => !prev);
+    playIfNotPlaying(); // Trigger audio when user opens menu
+  };
 
   const navLinkClass =
     "relative text-gray-700 text-sm transition-colors duration-300 hover:text-green-600 group";
@@ -27,7 +32,6 @@ export default function Navbar() {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50 chakra-petch-regular">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-
         {/* Logo */}
         <Link to="/" className="relative inline-flex text-gray-800 text-2xl font-semibold">
           <span className="relative inline-block">
@@ -53,14 +57,13 @@ export default function Navbar() {
             <span className={underlineSpan} />
           </Link>
 
-
-        <Link to="/blessings" className={navLinkClass}>
-          <div className="flex items-center gap-1">
-            <Play size={15} className="text-green-600" />
-            Harikrushna Maharaj
-          </div>
-          <span className={underlineSpan} />
-        </Link>
+          <Link to="/blessings" onClick={playIfNotPlaying} className={navLinkClass}>
+            <div className="flex items-center gap-1">
+              <Play size={15} className="text-green-600" />
+              Harikrushna Maharaj
+            </div>
+            <span className={underlineSpan} />
+          </Link>
 
           <Link to="/ai-client-updates" className={navLinkClass}>
             Lawline v1 – AI Client Update Edition
@@ -68,20 +71,13 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Audio Controls */}
+        {/* Desktop Audio Controls */}
         <div className="hidden md:flex items-center space-x-4">
-          {/* Play Button */}
-
-
-          {/* Volume Slider */}
-          <VolumeControls />  
-
-          {/* Auth Buttons */}
-
+          <VolumeControls />
         </div>
 
         {/* Mobile Hamburger */}
-        <button onClick={() => setIsOpen(!isOpen)} className="block md:hidden text-gray-800">
+        <button onClick={handleMobileToggle} className="block md:hidden text-gray-800">
           {isOpen ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
         </button>
       </div>
@@ -90,28 +86,23 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <nav className="flex flex-col space-y-2 px-4 pb-4">
-            <Link to="/blessings" className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">Harikrushna Maharaj</Link>
-            <Link to="/ai-client-updates" className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">Lawline v1 – AI Client Update Edition</Link>
+            <Link to="/blessings" onClick={playIfNotPlaying} className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">
+              Harikrushna Maharaj
+            </Link>
+            <Link to="/ai-client-updates" className="py-2 border-b border-gray-200 hover:text-green-600 transition-colors duration-300">
+              Lawline v1 – AI Client Update Edition
+            </Link>
           </nav>
 
-          {/* Mobile Audio Controls */}
-          {/* Mobile Audio Controls - Unified */}
+          {/* Mobile Volume Controls */}
           <div className="px-4 pb-4 pt-2">
             <VolumeControls />
-          </div>
-
-          <div className="flex flex-col space-y-2 px-4 pb-4">
-
           </div>
         </div>
       )}
 
-      {/* Hidden Audio Tag */}
-      <audio
-        ref={audioRef}
-        src="/audio/SwaminarayanDhun.mp3"
-        loop
-      />
+      {/* Hidden Audio Element */}
+      <audio ref={audioRef} src="/audio/SwaminarayanDhun.mp3" loop />
     </header>
   );
 }
