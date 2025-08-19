@@ -8,8 +8,6 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <LandingPage />
-
-
     </Layout>
   );
 };
