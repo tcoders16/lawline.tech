@@ -19,7 +19,7 @@ const coffeeShops = [
       'https://www.google.com/maps/place/Second+Cup+Caf%C3%A9/@43.4463569,-79.6694088,17.4z/data=!4m10!1m2!2m1!1sSecond+Cup!3m6!1s0x882b5c8dfc8a7deb:0xa7acba9425e72dc7!8m2!3d43.4467185!4d-79.6673249!15sCgpTZWNvbmQgQ3VwIgOIAQFaDCIKc2Vjb25kIGN1cJIBBGNhZmWqAU0KCS9tLzAyOHk2bBABKg4iCnNlY29uZCBjdXAoADIeEAEiGonqEL8HyO2oDd8-d1bPM_CBuT5a9klEQZI9Mg4QAiIKc2Vjb25kIGN1cOABAA!16s%2Fg%2F11c20t4ls9?entry=ttu',
     tagline: 'Let every sip fuel your growth.',
     content: 'At Second Cup, every conversation starts warm and ends with a roadmap. Business, branding, AI — I bring the brain, you bring the brew.',
-    imageUrls: ['/images/secondcup/secondcup01.jpeg', '/images/secondcup/secondcup02.jpeg'],
+    imageUrls: ['/images/secondcup/secondcup01.jpeg', '/images/secondcup/secondcup02.jpeg','/images/secondcup/secondcup03.jpeg'],
   },
 ];
 
