@@ -4,6 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import BuyInstallCard from './BuyInstallCard';
 import EmailSubscribe from './emailSubscribe';
+import MikeHarveyPhoto from './MikeHarveyPhoto';
+
 
 const LandingPage: React.FC = () => {
   return (
@@ -111,7 +113,20 @@ const LandingPage: React.FC = () => {
           </span>
           
         </div>
-         <BuyInstallCard />
+
+
+
+
+        {/* Mike & Harvey Photo */}
+        <div className="px-6 py-12 w-full">
+          <MikeHarveyPhoto />
+        </div>
+
+        {/* Email Card  */}
+
+        <div>
+          <BuyInstallCard />
+        </div>
 
         {/* Email Section */}
           <section
@@ -120,7 +135,6 @@ const LandingPage: React.FC = () => {
           >
             <div className="space-y-6 text-center">
               <EmailSubscribe />
-
             </div>
           </section>
 
