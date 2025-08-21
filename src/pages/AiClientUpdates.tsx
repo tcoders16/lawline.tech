@@ -6,11 +6,6 @@ import RealEmailPreview from "../components/RealEmailPreview";
 
 const AiClientUpdates = () => {
 
-
-
-
-
-
   const steps = [
     "Review incoming case files",
     "Extract key updates and highlights",
