@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import BuyInstallCard from './BuyInstallCard';
-import EmailSubscribe from './emailSubscribe';
+
 import MikeHarveyPhoto from './MikeHarveyPhoto';
 
 
@@ -129,14 +129,14 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Email Section */}
-          <section
+          {/* <section
             id="email-subscribe"
             className="flex items-center justify-center px-4 sm:px-6 mt-[70%] sm:mt-[70%] md:mt-[70%] lg:mt-[70%] xl:mt-[75%] 2xl:mt-[75%]"
           >
             <div className="space-y-6 text-center">
               <EmailSubscribe />
             </div>
-          </section>
+          </section> */}
 
       </div>
     </motion.main>
