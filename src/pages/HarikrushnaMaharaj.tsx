@@ -18,7 +18,8 @@ const Blessings = () => {
         imgSrc="/HariKrushnaMaharaj.webp"
         imgAlt="Bhagwan Swaminarayan"
         title="Bhagwan Swaminarayan 🙏"
-        role="Chairperson "
+        subtitle="— Chairperson of the Board"
+        role="Chairperson of the Board"
         signatureName="Shree Bhagwan Swaminarayan"
         signatureNote="Guiding Lawline with dharma, bhakti & seva"
         highlightLine={
@@ -62,6 +63,7 @@ const Blessings = () => {
         imgSrc="/images/LaxmiNarayanDev/LaxmiNarayanDev.jpg"
         imgAlt="Laxminarayan Dev — Vadtal Dham"
         title="Laxminarayan Dev 👑"
+         subtitle="— Chief Executive Officer (CEO)"
         role="Chief Executive Officer (CEO)"
         signatureName="Shree Laxminarayan Dev"
         signatureNote="Vadtal Dham — stewardship through service"
