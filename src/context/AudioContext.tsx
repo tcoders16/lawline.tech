@@ -44,7 +44,7 @@ const FALLBACK_TRACKS: Track[] = [
   {
     title: "Radharaman Dev",
     artist: "Jay Swaminarayan",
-    src: "/audio/Laxminarayandev.mp3",
+    src: "/audio/Radhakrushna.mp3",
     cover: "/images/covers/Radharamandev.jpeg",
   },
     {

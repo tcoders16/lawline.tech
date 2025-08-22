@@ -155,7 +155,7 @@ const VolumeControls = () => {
           // Mobile: full-screen sheet
           "mx-auto h-full w-full bg-white rounded-none",
           // Desktop: floating tall card
-          "sm:h-auto sm:rounded-2xl sm:border sm:border-emerald-200",
+          "sm:h-auto sm:rounded-2xl sm:border sm:border-emerald-400",
           "shadow-[0_12px_36px_rgba(16,185,129,0.22)]",
           "flex flex-col"
         ].join(" ")}
@@ -165,13 +165,13 @@ const VolumeControls = () => {
         {/* Mobile Close Button */}
         <button
           onClick={() => setOpen(false)}
-          className="absolute top-4 right-4 sm:hidden h-9 w-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 shadow"
+          className="absolute top-4 right-4 sm:hidden h-9 w-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-300 text-gray-700 shadow"
           aria-label="Close player"
         >
           ✕
         </button>
 
-        <div className="relative w-64 h-64 xs:w-72 xs:h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden ring-1 ring-emerald-200 shadow-md">
+        <div className="relative w-64 h-64 xs:w-72 xs:h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden ring-1 ring-emerald-400 shadow-md">
           {safeTracks[currentIndex]?.cover ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
