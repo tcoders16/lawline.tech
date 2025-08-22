@@ -9,7 +9,7 @@ createRoot(document.getElementById('root')!).render(
   
   <StrictMode>
 
-    <AudioProvider>
+    <AudioProvider autoPlay={false}>
        <App />
    </AudioProvider>
   </StrictMode>,
