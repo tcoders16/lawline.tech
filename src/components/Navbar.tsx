@@ -127,6 +127,10 @@ export default function Navbar() {
             >
               Lawline v1 – AI Client Update Edition
             </Link>
+          <Link to="/Coffee-and-Business" className={navLinkClass}>
+            ☕️ Business
+            <span className={underlineSpan} />
+          </Link>
             
             <Link to="/Omkumar-portfolio" className="py-2 border-b border-gray-200 hover:text-green-600">
               🕉️ Omkumar
