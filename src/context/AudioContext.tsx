@@ -39,7 +39,7 @@ const FALLBACK_TRACKS: Track[] = [
     title: "Swaminarayan Dhun",
     artist: "Jay Swaminarayan",
     src: "/audio/SwaminarayanDhun.mp3",
-    cover: "/images/covers/HarikrushnaMaharaj.jpg",
+    cover: "/images/covers/Harikrushnamaharaj.jpg",
   },
   {
     title: "Radharaman Dev",
@@ -51,13 +51,13 @@ const FALLBACK_TRACKS: Track[] = [
     title: "Laxminarayan Dev",
     artist: "Jay Swaminarayan",
     src: "/audio/Laxminarayandev.mp3",
-    cover: "/images/covers/Laxminarayandev.jpg",
+    cover: "/images/covers/Laxminarayandev.jpeg",
   },
   {
     title: "Kastbhanjan Dev",
     artist: "Jay Swaminarayan",
     src: "/audio/Kastbhanjandev.mp3",
-    cover: "/images/covers/Kastbhanajndev.jpg",
+    cover: "/images/covers/Kastbhanjandev.png",
   },
 ];
 

@@ -27,7 +27,7 @@ const FALLBACK_TRACKS = [
     title: "Swaminarayan Dhun",
     artist: "Traditional",
     src: "/audio/SwaminarayanDhun.mp3",
-    cover: "/images/covers/dhun.jpg", // optional
+    cover: "/images/covers/Harikrushnamaharaj.jpg",
   },
   {
     title: "Laxminarayan Dev Vadtal",
@@ -39,7 +39,7 @@ const FALLBACK_TRACKS = [
     title: "Kastbhanajan Dev",
     artist: "Devotional",
     src: "/audio/Kastbhanjandev.mp3",
-    cover: "/images/covers/bhajan2.jpg",
+    cover: "/images/covers/Kastbhanajandev.jpg",
   },
 ];
 

@@ -121,14 +121,14 @@ export default function Navbar() {
 
 
 
-          <Link to="/ai-client-updates" className={navLinkClass}>
+          <Link to="/ai-client-updates" className="py-2 border-b border-gray-200 hover:text-green-600">
             <span className="font-medium">Lawline v1</span>  – AI Client Update Edition
             <span className={underlineSpan} />
           </Link>
 
 
           
-          <Link to="/Coffee-and-Business" className={navLinkClass}>
+          <Link to="/Coffee-and-Business" className="py-2 border-b border-gray-200 hover:text-green-600">
             ☕️ Business
             <span className={underlineSpan} />
           </Link>
