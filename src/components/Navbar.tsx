@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50 chakra-petch-regular">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div className="max-w-8xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link to="/" className="relative inline-flex text-gray-800 text-2xl font-semibold">
           <span className="relative inline-block">
@@ -52,7 +52,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden xl:flex space-x-6">
+        <nav className="hidden xl:flex space-x-7">
           <Link to="/" className={navLinkClass}>
             Home
             <span className={underlineSpan} />
@@ -76,6 +76,12 @@ export default function Navbar() {
           </Link>
           <Link to="/Coffee-and-Business" className={navLinkClass}>
             ☕️ Business
+            <span className={underlineSpan} />
+          </Link>
+          
+          
+          <Link to="/Omkumar-portfolio" className={navLinkClass}>
+            🕉️ Omkumar
             <span className={underlineSpan} />
           </Link>
         </nav>
@@ -120,8 +126,9 @@ export default function Navbar() {
             >
               Lawline v1 – AI Client Update Edition
             </Link>
-            <Link to="/Coffee-and-Business" className="py-2 hover:text-green-600">
-              ☕️ Business
+            
+            <Link to="/Omkumar-portfolio" className="py-2 border-b border-gray-200 hover:text-green-600">
+              🕉️ Omkumar
             </Link>
           </nav>
 

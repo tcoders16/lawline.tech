@@ -18,7 +18,7 @@ const problemsAndSolutions: TimelineEntry[] = [
       "A jewelry store struggled to find invoices buried in random folders and needed an offline solution.",
     solution:
       "Built a Whisper-powered voice assistant that retrieves invoices via fuzzy natural language search. Fully local.",
-    imageUrl: "/images/voice-agent.jpeg",
+    imageUrl: "/images/projects/Invoice.png",
   },
   {
     year: "2024",
@@ -27,7 +27,7 @@ const problemsAndSolutions: TimelineEntry[] = [
       "Commuters lost items with no way to match them back. Manual logging, paper tags, and no automation.",
     solution:
       "Created an AI-based system with QR tagging, NLP + image matching using Firestore and React. Deployed in under 10 days.",
-    imageUrl: "/images/lost-found.jpeg",
+    imageUrl: "/images/projects/Lost&Found.png",
   },
   {
     year: "2025",
@@ -36,7 +36,7 @@ const problemsAndSolutions: TimelineEntry[] = [
       "Law firms wasted paralegal hours writing updates, memos, and summaries manually.",
     solution:
       "Built a local RAG system that turns legal facts into ready-to-send communication, preserving tone and privacy.",
-    imageUrl: "/images/lawline-ai.jpeg",
+    imageUrl: "/images/projects/Lawline.png",
   },
   {
     year: "2025",
@@ -45,7 +45,7 @@ const problemsAndSolutions: TimelineEntry[] = [
       "Temple admins had to retype donor info every time and lacked proper filtering or history.",
     solution:
       "Built a donor system with smart autofill, live dashboards, and admin filters across mobile and web.",
-    imageUrl: "/images/vadtal.jpeg",
+    imageUrl: "/images/projects/VadtalDonationManagement.png",
   },
 ];
 
@@ -78,7 +78,7 @@ const TimeLine = () => {
             <img
               src={entry.imageUrl}
               alt={entry.title}
-              className="w-full lg:w-80 rounded-xl shadow-md object-cover aspect-[3/2] mt-4 lg:mt-0"
+              className="w-full lg:w-80 rounded-xl shadow-md object-cover aspect-[10/16] mt-4 lg:mt-0"
             />
           </div>
         </motion.div>
