@@ -59,7 +59,7 @@ export default function Navbar() {
             <span className={underlineSpan} />
           </Link>
           <Link to="/ai-client-updates" className={navLinkClass}>
-            Lawline v1 – AI Client Update Edition
+            <span className="font-medium">Lawline v1</span>  – AI Client Update Edition
             <span className={underlineSpan} />
           </Link>
           <Link to="/Coffee-and-Business" className={navLinkClass}>
