@@ -1,65 +1,128 @@
 import { useEffect } from "react";
 import Layout from "../components/Layout";
 import { useAudio } from "../context/AudioContext";
-import VolumeControls from "../components/VolumeControls";
-
+import BlessingSection from "../components/BlessingSection";
 
 const Blessings = () => {
   const { playIfNotPlaying } = useAudio();
 
   useEffect(() => {
-    playIfNotPlaying(); // only triggers on /blessings page
+    playIfNotPlaying();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <Layout>
-      <div className="min-h-screen bg-white flex flex-col md:flex-row items-center justify-center px-4 pt-20 pb-28 md:pt-24 lg:pt-28 gap-10">
-        {/* Left: Image */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <img
-            src="/HariKrushnaMaharaj.webp"
-            alt="Harikrushna Maharaj Vadtal Dham"
-            className="w-64 sm:w-72 md:w-80 lg:w-96 rounded-xl border-4 border-green-600 shadow-xl"
-          />
-        </div>
+      {/* Bhagwan Swaminarayan — Kathiawar & the Kathis */}
+      <BlessingSection
+        imgSrc="/HariKrushnaMaharaj.webp"
+        imgAlt="Bhagwan Swaminarayan"
+        title="Bhagwan Swaminarayan 🙏"
+        role="Chairperson "
+        signatureName="Shree Bhagwan Swaminarayan"
+        signatureNote="Guiding Lawline with dharma, bhakti & seva"
+        highlightLine={
+          <>
+            I proudly belong to this lineage —{" "}
+            <span className="italic underline">Kathi Darbar</span> — and carry its
+            strength as service at <span className="text-green-700">Lawline</span>.
+          </>
+        }
+      >
+        <span className="block">
+          In the dust of <span className="text-green-700">Kathiawar</span>, where
+          oaths were sworn on the blade’s edge,{" "}
+          <span className="text-green-700 font-semibold">Bhagwan Swaminarayan</span>{" "}
+          met the <span className="text-green-700">Kathi Darbars</span> not to
+          suppress their courage, but to elevate it. Valor turned to{" "}
+          <span className="text-green-700">seva</span>, pride to{" "}
+          <span className="text-green-700">discipline</span>, and the noise of
+          battle to the <span className="text-green-700">silence of devotion</span>.
+        </span>
 
-        {/* Vertical Divider Line */}
-        <div className="hidden md:block w-[6px] h-[26rem] bg-green-600 rounded-full shadow-md" />
+        <span className="block mt-4">
+          That same transformation defines{" "}
+          <strong className="text-green-700">Lawline</strong>. We take complex,
+          high-stakes legal work and—without losing edge—forge it into{" "}
+          <span className="text-green-700">clarity</span>,{" "}
+          <span className="text-green-700">steadiness</span>, and{" "}
+          <span className="text-green-700">service</span>. Strength becomes
+          structure; speed becomes trust.
+        </span>
 
-        {/* Right: Text */}
-        <div className="w-full md:w-1/2 flex flex-col items-start text-left space-y-4">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-green-700 chakra-petch-bold">
-            Bhagwan Swaminarayan 🙏
-          </h1>
+        <ul className="mt-4 list-disc pl-5 text-gray-700 space-y-1">
+          <li>Heritage of courage, expressed as ethical action</li>
+          <li>Discipline that turns chaos into clarity</li>
+          <li>Service first — technology as quiet, reliable seva</li>
+        </ul>
+      </BlessingSection>
 
-          <p className="text-base sm:text-lg md:text-xl text-gray-800 chakra-petch-regular leading-relaxed">
-            May the divine energy guide the vision of{" "}
-            <strong className="text-green-700">Lawline</strong>. Every line of
-            code is written under the spiritual light of{" "}
-            <a
-              href="https://www.vadtaldhamtoronto.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-700 underline hover:text-green-800 font-chakra-petch-bold hover:font-bold transition-all duration-200 ease-in-out"
-            >
-              Vadtal Dham
-            </a>
-            . This presence keeps us{" "}
-            <span className="text-green-700">grounded</span>,{" "}
-            <span className="text-green-700">focused</span>, and in service to a{" "}
-            <span className="text-green-700">higher purpose</span> — as we build
-            the future of{" "}
-            <span className="text-green-700">legal automation</span> with{" "}
-            <span className="text-green-700">faith</span> and{" "}
-            <span className="text-green-700">clarity</span>.
-          </p>
+      {/* Laxminarayan Dev — Vadtal’s Beacon (CEO) */}
+      <BlessingSection
+        imgSrc="/images/LaxmiNarayanDev/LaxmiNarayanDev.jpg"
+        imgAlt="Laxminarayan Dev — Vadtal Dham"
+        title="Laxminarayan Dev 👑"
+        role="Chief Executive Officer (CEO)"
+        signatureName="Shree Laxminarayan Dev"
+        signatureNote="Vadtal Dham — stewardship through service"
+      >
+        <span className="block">
+          In <span className="text-green-700 font-semibold">Vadtal Dham</span>, the eternal seat of{" "}
+          <span className="text-green-700 font-semibold">Shree Laxminarayan Dev</span>, divinity manifests as leadership.
+          Generations have drawn <span className="text-green-700">wisdom</span>,{" "}
+          <span className="text-green-700">stability</span>, and{" "}
+          <span className="text-green-700">faith</span> from this sacred presence.
+        </span>
 
-          {/* Volume Controls */}
-          <div className="mt-4 w-full">
-            <VolumeControls />
-          </div>
-        </div>
-      </div>
+        <span className="block mt-4">
+          At <strong className="text-green-700">Lawline</strong>, we revere{" "}
+          <span className="text-green-700 font-semibold">Laxminarayan Dev as the CEO</span>. Leadership here means more than
+          strategy—it means <span className="text-green-700">clarity of vision</span>,{" "}
+          <span className="text-green-700">responsibility to society</span>, and{" "}
+          <span className="text-green-700">unwavering values</span>. As Vadtal shines for devotees, Lawline aims to shine in{" "}
+          <span className="text-green-700">legal automation</span>, with growth rooted in{" "}
+          <span className="text-green-700">faith and service</span>.
+        </span>
+
+        <ul className="mt-4 list-disc pl-5 text-gray-700 space-y-1">
+          <li>Vision that’s steady and service‑first</li>
+          <li>Clarity in decisions, humility in action</li>
+          <li>Technology as <span className="text-green-700">seva</span></li>
+        </ul>
+      </BlessingSection>
+
+      {/* Kastbhanjan Dev — Sarangpur’s Protector (Co‑Founder & Protector) */}
+      <BlessingSection
+        imgSrc="/images/Kastbhanjandev/Kastbhanjandev.jpg"
+        imgAlt="Kastbhanjan Dev — Sarangpur"
+        title="Kastbhanjan Dev ⚔️"
+        subtitle="— Co‑Founder & Protector"
+        role="Co‑Founder & Protector"
+        signatureName="Shree Kashtbhanjan Dev"
+        signatureNote="Sarangpur — strength, courage & protection"
+      >
+        <span className="block">
+          In <span className="text-green-700 font-semibold">Sarangpur</span> resides the mighty{" "}
+          <span className="text-green-700 font-semibold">Kastbhanjan Dev</span>—the <em>Crusher of Sorrows</em>—revered as the{" "}
+          <span className="text-green-700">remover of obstacles</span>. Devotees seek His blessing for strength, courage, and
+          freedom from fear. His presence is not only worshipped, but{" "}
+          <span className="text-green-700">felt as protection</span>.
+        </span>
+
+        <span className="block mt-4">
+          At <strong className="text-green-700">Lawline</strong>, <span className="text-green-700">Kastbhanjan Dev</span> is
+          honored as our <span className="text-green-700">Co‑Founder & Protector</span>. As He shields devotees from challenges,
+          His divine force safeguards our mission—keeping our foundation{" "}
+          <span className="text-green-700">unshakable</span>. Every line of code is under His watch, ensuring our innovation is{" "}
+          <span className="text-green-700">fearless, ethical, and resilient</span>.
+        </span>
+
+        <ul className="mt-4 list-disc pl-5 text-gray-700 space-y-1">
+          <li>Protection in uncertainty</li>
+          <li>Courage to build without fear</li>
+          <li>Integrity that outlasts obstacles</li>
+        </ul>
+      </BlessingSection>
     </Layout>
   );
 };

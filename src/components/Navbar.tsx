@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Play } from "lucide-react";
 
+
 import VolumeControls from "./VolumeControls";
 import Logo from "./Logo";
 
@@ -19,21 +20,21 @@ export default function Navbar() {
       audio.play().catch((err) => console.warn("Playback failed:", err));
     }
   };
-
+  
   const handleMobileToggle = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const navLinkClass =
-    "relative text-gray-700 text-sm transition-colors duration-300 hover:text-green-600 group";
+  const navLinkClass = "relative text-gray-700 text-sm transition-colors duration-300 hover:text-green-600 group";
 
-  const underlineSpan = `
-    absolute left-0 -bottom-1 w-0 h-[2px] bg-green-600 transition-all duration-300 group-hover:w-full
-  `;
+  const underlineSpan = `absolute left-0 -bottom-1 w-0 h-[2px] bg-green-600 transition-all duration-300 group-hover:w-full`;
 
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50 chakra-petch-regular">
       <div className="relative max-w-9xl mx-auto flex items-center justify-between px-12 py-3">
+        
+        
+        
         {/* Logo */}
         <Logo />
 
@@ -66,13 +67,14 @@ export default function Navbar() {
             ☕️ Business
             <span className={underlineSpan} />
           </Link>
-          
-          
           <Link to="/Omkumar-portfolio" className={navLinkClass}>
             🕉️ Omkumar
             <span className={underlineSpan} />
           </Link>
         </nav>
+
+
+
 
         {/* Desktop Audio Controls */}
         <div className="hidden xl:flex items-center space-x-4">
@@ -96,6 +98,12 @@ export default function Navbar() {
             <Link to="/" className="py-2 border-b border-gray-200 hover:text-green-600">
               Home
             </Link>
+
+
+
+
+
+
             <Link
               to="/blessings"
               onClick={() => {
@@ -108,6 +116,11 @@ export default function Navbar() {
                 Harikrushna Maharaj
               </div>
             </Link>
+            
+
+
+
+
             <Link
               to="/ai-client-updates"
               className="py-2 border-b border-gray-200 hover:text-green-600"
