@@ -72,9 +72,9 @@ const card = {
 
 const TechStack: React.FC = () => {
   return (
-    <section className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-20 sm:pt-24">
+    <section className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-20 sm:pt-24 mt-32">
       {/* Accent bar */}
-      <div className="absolute left-0 right-0 -top-1 mx-auto h-1.5 max-w-6xl rounded-full bg-gradient-to-r from-emerald-400 via-blue-400 to-fuchsia-400" />
+      <div className="absolute left-0 right-0 -top-1 mx-auto h-0.5 max-w-6xl rounded-full bg-gradient-to-r from-emerald-400 via-blue-400 to-fuchsia-400" />
 
       {/* Context intro / story */}
       <ToolboxStory />
