@@ -1,15 +1,15 @@
 // src/components/LogoIntro.tsx
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const LogoIntro = ({ onFinish }: { onFinish?: () => void }) => {
-  const [visibleText, setVisibleText] = useState('');
+  const [visibleText, setVisibleText] = useState("");
   const [hideLogo, setHideLogo] = useState(false);
   const [showCaret, setShowCaret] = useState(true);
+  const [finished, setFinished] = useState(false);
 
-  const fullText = 'L\u00A0awline'; // non-breaking space between Law and Line
-
-  useEffect(() => {
+  
+const fullText = 'L\u00A0awline';  useEffect(() => {
     let index = 0;
 
     const typingInterval = setInterval(() => {
@@ -18,6 +18,7 @@ const LogoIntro = ({ onFinish }: { onFinish?: () => void }) => {
         index++;
       } else {
         clearInterval(typingInterval);
+        setFinished(true); // mark typing complete
       }
     }, 300);
 
@@ -40,22 +41,25 @@ const LogoIntro = ({ onFinish }: { onFinish?: () => void }) => {
   return (
     <motion.div
       className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black ${
-        hideLogo ? 'pointer-events-none' : ''
+        hideLogo ? "pointer-events-none" : ""
       }`}
       initial={{ opacity: 1 }}
-      animate={{ opacity: hideLogo ? 0 : 1, y: hideLogo ? -100 : 0 }}
-      transition={{ duration: 1.5, ease: 'easeInOut' }}
+      animate={{ opacity: hideLogo ? 0 : 1 }}
+      transition={{ duration: 1.2, ease: "easeInOut" }}
     >
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className=" ml-2 text-center font-bold antialiased tracking-wider leading-[1.1] text-black dark:text-white chakra-petch-bold text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[12rem]"
+        className="flex items-center justify-center text-center font-bold tracking-wide leading-tight text-black dark:text-white chakra-petch-bold 
+          text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[10rem]"
       >
         {visibleText}
-        <span className="inline-block w-[1ch]">
-          {showCaret && <span className="animate-pulse">|</span>}
-        </span>
+        {!finished && (
+          <span className="inline-block w-[1ch]">
+            {showCaret && <span className="animate-pulse">|</span>}
+          </span>
+        )}
       </motion.div>
     </motion.div>
   );
