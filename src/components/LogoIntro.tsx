@@ -8,7 +8,7 @@ const LogoIntro = ({ onFinish }: { onFinish?: () => void }) => {
   const [showCaret, setShowCaret] = useState(true);
   const [finished, setFinished] = useState(false);
 
-  
+
 const fullText = 'L\u00A0awline';  useEffect(() => {
     let index = 0;
 
@@ -47,20 +47,16 @@ const fullText = 'L\u00A0awline';  useEffect(() => {
       animate={{ opacity: hideLogo ? 0 : 1 }}
       transition={{ duration: 1.2, ease: "easeInOut" }}
     >
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
-        className="flex items-center justify-center text-center font-bold tracking-wide leading-tight text-black dark:text-white chakra-petch-bold 
-          text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[10rem]"
-      >
-        {visibleText}
-        {!finished && (
-          <span className="inline-block w-[1ch]">
-            {showCaret && <span className="animate-pulse">|</span>}
-          </span>
-        )}
-      </motion.div>
+<motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1 }}
+  className="flex items-center justify-center text-center font-bold tracking-wide leading-tight text-black dark:text-white chakra-petch-bold 
+    text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] 2xl:text-[10rem]"
+>
+  {visibleText}
+  {!finished && showCaret && <span className="animate-pulse">|</span>}
+</motion.div>
     </motion.div>
   );
 };
