@@ -12,14 +12,7 @@ const Footer = () => {
             LinkedIn
           </a>
           <span className="hidden sm:inline">•</span>
-          <a
-            href="https://www.omkumarsolanki.com"
-            className="text-green-700 hover:underline hover:text-green-800"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            omkumarsolanki.com
-          </a>
+
         </div>
       </footer>
     );
