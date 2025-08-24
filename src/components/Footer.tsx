@@ -11,7 +11,7 @@ const Footer = () => {
           >
             LinkedIn
           </a>
-          <span className="hidden sm:inline">•</span>
+
 
         </div>
       </footer>
